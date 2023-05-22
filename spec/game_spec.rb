@@ -37,13 +37,17 @@ describe Game do
   end
 
   describe 'checking for a correct guess' do
-    it 'checks that the guess is correct' do
+    it 'checks if the guess is correct' do
     end
     it 'marks the current game as WON' do
     end
   end
 
   describe 'checking for incorrect guess' do
+    it 'checks if the guess is incorrect' do
+    end
+    it 'updates the number of attemps' do
+    end
   end
 
   describe 'check letter position' do
