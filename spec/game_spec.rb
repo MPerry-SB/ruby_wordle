@@ -1,4 +1,6 @@
 require './lib/game'
+require './lib/guess'
+
 
 describe Game do
   describe '#new' do
@@ -28,16 +30,18 @@ describe Game do
   end
 end
 
-# describe 'guessing a word' do
-#   it 'allows a user to input a guess' do
-#   end
-#   it 'stores the current guess' do
-#   end
-#   it 'stores another guess' do
-#   end
-#   it 'will only allow the user to enter 5 letter words' do
-#   end
-# end
+describe Guess do
+  describe 'guessing a word' do
+    it 'allows a user to input a guess' do
+    end
+    it 'stores the current guess' do
+    end
+    it 'stores another guess' do
+    end
+    it 'will only allow the user to enter 5 letter words' do
+    end
+  end
+end
 
 # describe 'checking for a correct guess' do
 #   it 'checks if the guess is correct' do
