@@ -19,5 +19,11 @@ describe Game do
 
       expect(game.word("SHELL")).to eq("SHELL")
     end
+
+    it 'contains a number of attempts' do
+      game = Game.new
+
+      expect(game.attempts).to eq(0)
+    end
   end
 end
