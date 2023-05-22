@@ -63,6 +63,8 @@ describe Game do
   end
 
   describe 'winning the game' do
+    it 'can identify when a player has won the game' do
+    end
   end
 
   describe 'losing the game' do
