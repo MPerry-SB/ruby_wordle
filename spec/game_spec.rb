@@ -39,7 +39,7 @@ describe Game do
   describe 'checking for a correct guess' do
     it 'checks if the guess is correct' do
     end
-    it 'marks the current game as WON' do
+    it 'updates the current game as WON' do
     end
   end
 
