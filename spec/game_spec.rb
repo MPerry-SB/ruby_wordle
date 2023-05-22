@@ -73,5 +73,9 @@ describe Game do
   end
 
   describe 'game reset' do
+    it 'resets the game after winning' do 
+    end
+    it 'resets the game after losing' do 
+    end
   end
 end
