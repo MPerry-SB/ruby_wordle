@@ -11,7 +11,13 @@ describe Game do
     it "contains a word to guess" do
       game = Game.new
 
-      expect(game.word).to eq("HELLO")
+      expect(game.word("HELLO")).to eq("HELLO")
+    end
+
+    it "contains a word to guess" do
+      game = Game.new
+
+      expect(game.word("SHELL")).to eq("SHELL")
     end
   end
 end

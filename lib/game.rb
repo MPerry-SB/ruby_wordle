@@ -1,6 +1,6 @@
 class Game
 
-  def word
-    "HELLO"
+  def word(input)
+    input
   end
 end
