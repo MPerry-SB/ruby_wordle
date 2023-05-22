@@ -68,6 +68,8 @@ describe Game do
   end
 
   describe 'losing the game' do
+    it 'can identify when a player has lost the game' do
+    end
   end
 
   describe 'game reset' do
