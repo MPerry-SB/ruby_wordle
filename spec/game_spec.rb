@@ -34,6 +34,8 @@ describe Game do
     end
     it 'stores another guess' do
     end
+    it 'will only allow the user to enter 5 letter words' do
+    end
   end
 
   describe 'checking for a correct guess' do
