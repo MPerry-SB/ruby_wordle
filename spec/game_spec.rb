@@ -8,13 +8,13 @@ describe Game do
       expect(game).not_to be_nil
     end
 
-    it 'contains a word to guess' do
+    it 'contains a word' do
       game = Game.new('HELLO')
 
       expect(game.word).to eq('HELLO')
     end
 
-    it 'contains another word to guess' do
+    it 'contains another word' do
       game = Game.new('SHELL')
 
       expect(game.word).to eq('SHELL')
