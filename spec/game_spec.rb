@@ -70,6 +70,8 @@ describe Game do
   describe 'losing the game' do
     it 'can identify when a player has lost the game' do
     end
+    it 'will not allow the user to have more than 6 attempts' do
+    end
   end
 
   describe 'game reset' do
