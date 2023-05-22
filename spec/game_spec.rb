@@ -51,9 +51,13 @@ describe Game do
   end
 
   describe 'check letter position' do
+    it 'identifies the correctly positioned letters of a guess' do
+    end
   end
 
   describe 'check letter existence' do
+    it 'identifies if a letter is within a guess' do
+    end
   end
 
   describe 'winning the game' do
