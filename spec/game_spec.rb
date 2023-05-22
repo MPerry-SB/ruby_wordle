@@ -27,7 +27,13 @@ describe Game do
     end
   end
 
-  describe 'guessing a word' do 
+  describe 'guessing a word' do
+    it 'allows a user to input a guess' do
+    end
+    it 'stores the current guess' do
+    end
+    it 'stores another guess' do
+    end
   end
 
   describe 'checking for correct guess' do
