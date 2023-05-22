@@ -26,4 +26,28 @@ describe Game do
       expect(game.attempts).to eq(0)
     end
   end
+
+  describe 'guessing a word' do 
+  end
+
+  describe 'checking for correct guess' do
+  end
+
+  describe 'checking for incorrect guess' do
+  end
+
+  describe 'check letter position' do
+  end
+
+  describe 'check letter existence' do
+  end
+
+  describe 'winning the game' do
+  end
+
+  describe 'losing the game' do
+  end
+
+  describe 'game reset' do
+  end
 end
