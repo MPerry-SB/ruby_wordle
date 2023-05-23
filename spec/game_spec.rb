@@ -38,9 +38,17 @@ describe 'guessing a word' do
   end
 
   it 'stores the current guess' do
+    game = Game.new('HELLO')
+    game.user_guess('FOOBAR')
+
+    result = game.user_guesses
+
+    expect(result).to eq(['FOOBAR'])
   end
+
   it 'stores another guess' do
   end
+
   it 'will only allow the user to enter 5 letter words' do
   end
 end
