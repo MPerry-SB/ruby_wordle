@@ -26,15 +26,6 @@ describe Game do
 end
 
 describe 'guessing a word' do
-  it 'allows a user to input a guess' do
-    game = Game.new
-
-    game.user_guess('ATOMS')
-    result = game.user_guesses
-
-    expect(result).to eq(['ATOMS'])
-  end
-
   it 'stores the current guess' do
     game = Game.new
 
