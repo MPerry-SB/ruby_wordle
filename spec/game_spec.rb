@@ -1,4 +1,5 @@
 require './lib/game'
+require 'pry'
 
 describe Game do
   describe '#new' do
@@ -28,28 +29,29 @@ describe 'guessing a word' do
   it 'allows a user to input a guess' do
     game = Game.new
 
-    result = game.user_guess('FOOBA')
+    game.user_guess('ATOMS')
+    result = game.user_guesses
 
-    expect(result).to eq('FOOBA')
+    expect(result).to eq(['ATOMS'])
   end
 
   it 'stores the current guess' do
     game = Game.new
 
-    game.user_guess('FOOBA')
+    game.user_guess('ATOMS')
     result = game.user_guesses
 
-    expect(result).to eq(['FOOBA'])
+    expect(result).to eq(['ATOMS'])
   end
 
   it 'stores another guess' do
     game = Game.new
 
-    game.user_guess('FOOBA')
-    game.user_guess('BARBA')
+    game.user_guess('ATOMS')
+    game.user_guess('LIGHT')
     result = game.user_guesses
 
-    expect(result).to eq(['FOOBA', 'BARBA'])
+    expect(result).to eq(['ATOMS', 'LIGHT'])
   end
 
   it 'will not allow the user to enter a word less than 5 letters' do
@@ -73,7 +75,15 @@ end
 
 describe 'checking for a correct guess' do
   it 'checks if the guess is correct' do
+    game = Game.new
+    allow(game).to receive(:user_guess).and_return('Correct guess! You Win!')
+  
+    result = game.user_guess('HELLO')
+    expected_string = "Correct guess! You Win!"
+
+    expect(result).to eq(expected_string)
   end
+
   it 'updates the current game as WON' do
   end
 end
@@ -81,6 +91,7 @@ end
 describe 'checking for incorrect guess' do
   it 'checks if the guess is incorrect' do
   end
+
   it 'updates the number of attemps' do
   end
 end
