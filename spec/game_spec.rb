@@ -16,14 +16,6 @@ describe Game do
       expect(game.word).to eq('HELLO')
     end
 
-    it 'contains another word' do
-      game = Game.new
-
-      allow(game).to receive(:word).and_return('HELLO')
-
-      expect(game.word).to eq('HELLO')
-    end
-
     it 'contains a number of attempts' do
       game = Game.new
 
