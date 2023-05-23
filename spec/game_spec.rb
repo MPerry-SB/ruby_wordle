@@ -32,28 +32,28 @@ describe 'guessing a word' do
   it 'allows a user to input a guess' do
     game = Game.new('HELLO')
 
-    result = game.user_guess('FOOBAR')
+    result = game.user_guess('FOOBA')
 
-    expect(result).to eq('FOOBAR')
+    expect(result).to eq('FOOBA')
   end
 
   it 'stores the current guess' do
     game = Game.new('HELLO')
 
-    game.user_guess('FOOBAR')
+    game.user_guess('FOOBA')
     result = game.user_guesses
 
-    expect(result).to eq(['FOOBAR'])
+    expect(result).to eq(['FOOBA'])
   end
 
   it 'stores another guess' do
     game = Game.new('HELLO')
 
-    game.user_guess('FOOBAR')
-    game.user_guess('BARBAZ')
+    game.user_guess('FOOBA')
+    game.user_guess('BARBA')
     result = game.user_guesses
 
-    expect(result).to eq(['FOOBAR', 'BARBAZ'])
+    expect(result).to eq(['FOOBA', 'BARBA'])
   end
 
   it 'will not allow the user to enter a word less than 5 letters' do
@@ -66,6 +66,12 @@ describe 'guessing a word' do
   end
 
   it 'will not allow the user to enter a word more than 5 letters' do
+    game = Game.new('HELLO')
+
+    result = game.user_guess('FOOBARBAZ')
+    expected_string = "Please enter a word with exactly 5 letters"
+
+    expect(result).to eq(expected_string)
   end
 end
 
