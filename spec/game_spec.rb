@@ -68,17 +68,26 @@ end
 
 describe 'checking for a correct guess' do
   it 'checks if the guess is correct for a correct guess' do
-    expected_string = 'Correct guess! You Win!'
     game = Game.new
-    allow(game).to receive(:check_user_guess).and_return(expected_string)
+    game.word = 'HELLO'
 
     game.user_guess('HELLO')
     result = game.check_user_guess
+    expected_string = 'Correct guess! You Win!'
 
     expect(result).to eq(expected_string)
   end
 
   it 'updates the current game as WON for a correct guess' do
+    game = Game.new
+
+    allow(game).to receive(:status).and_return('GAME WON')
+
+    game.user_guess('HELLO')
+    result = game.status
+    expected_string = 'GAME WON'
+
+    expect(result).to eq(expected_string)
   end
 end
 
