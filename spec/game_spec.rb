@@ -13,7 +13,7 @@ describe Game do
       game = Game.new
 
       allow(game).to receive(:word).and_return('HELLO')
-    
+
       expect(game.word).to eq('HELLO')
     end
 
@@ -42,7 +42,7 @@ describe 'guessing a word' do
     game.user_guess('LIGHT')
     result = game.user_guesses
 
-    expect(result).to eq(['ATOMS', 'LIGHT'])
+    expect(result).to eq(%w[ATOMS LIGHT])
   end
 
   it 'will not allow the user to enter a word less than 5 letters' do
@@ -50,7 +50,7 @@ describe 'guessing a word' do
 
     game.user_guess('BAZ')
     result = game.check_user_guess
-    expected_string = "Please enter a word with exactly 5 letters"
+    expected_string = 'Please enter a word with exactly 5 letters'
 
     expect(result).to eq(expected_string)
   end
@@ -60,7 +60,7 @@ describe 'guessing a word' do
 
     game.user_guess('FOOBARBAZ')
     result = game.check_user_guess
-    expected_string = "Please enter a word with exactly 5 letters"
+    expected_string = 'Please enter a word with exactly 5 letters'
 
     expect(result).to eq(expected_string)
   end
@@ -70,10 +70,10 @@ describe 'checking for a correct guess' do
   it 'checks if the guess is correct' do
     game = Game.new
     allow(game).to receive(:check_user_guess).and_return('Correct guess! You Win!')
-  
+
     game.user_guess('HELLO')
     result = game.check_user_guess
-    expected_string = "Correct guess! You Win!"
+    expected_string = 'Correct guess! You Win!'
 
     expect(result).to eq(expected_string)
   end
