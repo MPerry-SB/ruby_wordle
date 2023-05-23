@@ -1,7 +1,7 @@
 class Game
-  def initialize(word)
+  def initialize()
     @attempts = 0
-    @word = word
+    @word = create_word
     @user_guesses = []
   end
 
@@ -12,4 +12,11 @@ class Game
     @user_guesses << string
     @user_guesses.last
   end
+
+  private
+
+  def create_word
+    ["HELLO", "SHELL", "FOOBA"].sample
+  end
+
 end

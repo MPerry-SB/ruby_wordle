@@ -3,25 +3,29 @@ require './lib/game'
 describe Game do
   describe '#new' do
     it 'creates a new game' do
-      game = Game.new('HELLO')
+      game = Game.new
 
       expect(game).not_to be_nil
     end
 
-    it 'contains a word' do
-      game = Game.new('HELLO')
+    it 'contains a random word' do
+      game = Game.new
 
+      allow(game).to receive(:word).and_return('HELLO')
+    
       expect(game.word).to eq('HELLO')
     end
 
     it 'contains another word' do
-      game = Game.new('SHELL')
+      game = Game.new
 
-      expect(game.word).to eq('SHELL')
+      allow(game).to receive(:word).and_return('HELLO')
+
+      expect(game.word).to eq('HELLO')
     end
 
     it 'contains a number of attempts' do
-      game = Game.new('SHELL')
+      game = Game.new
 
       expect(game.attempts).to eq(0)
     end
@@ -30,7 +34,7 @@ end
 
 describe 'guessing a word' do
   it 'allows a user to input a guess' do
-    game = Game.new('HELLO')
+    game = Game.new
 
     result = game.user_guess('FOOBA')
 
@@ -38,7 +42,7 @@ describe 'guessing a word' do
   end
 
   it 'stores the current guess' do
-    game = Game.new('HELLO')
+    game = Game.new
 
     game.user_guess('FOOBA')
     result = game.user_guesses
@@ -47,7 +51,7 @@ describe 'guessing a word' do
   end
 
   it 'stores another guess' do
-    game = Game.new('HELLO')
+    game = Game.new
 
     game.user_guess('FOOBA')
     game.user_guess('BARBA')
@@ -57,7 +61,7 @@ describe 'guessing a word' do
   end
 
   it 'will not allow the user to enter a word less than 5 letters' do
-    game = Game.new('HELLO')
+    game = Game.new
 
     result = game.user_guess('BAZ')
     expected_string = "Please enter a word with exactly 5 letters"
@@ -66,7 +70,7 @@ describe 'guessing a word' do
   end
 
   it 'will not allow the user to enter a word more than 5 letters' do
-    game = Game.new('HELLO')
+    game = Game.new
 
     result = game.user_guess('FOOBARBAZ')
     expected_string = "Please enter a word with exactly 5 letters"
