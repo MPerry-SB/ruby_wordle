@@ -5,4 +5,8 @@ class Game
   end
 
   attr_reader :attempts, :word
+
+  def user_guess(string)
+    string
+  end
 end

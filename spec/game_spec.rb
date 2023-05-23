@@ -30,7 +30,13 @@ end
 
 describe 'guessing a word' do
   it 'allows a user to input a guess' do
+    game = Game.new('HELLO')
+
+    result = game.user_guess('FOOBAR')
+
+    expect(result).to eq('FOOBAR')
   end
+
   it 'stores the current guess' do
   end
   it 'stores another guess' do
