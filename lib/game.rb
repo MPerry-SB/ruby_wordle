@@ -18,5 +18,4 @@ class Game
   def create_word
     ["HELLO", "SHELL", "FOOBA"].sample
   end
-
 end
