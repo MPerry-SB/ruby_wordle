@@ -56,7 +56,16 @@ describe 'guessing a word' do
     expect(result).to eq(['FOOBAR', 'BARBAZ'])
   end
 
-  it 'will only allow the user to enter 5 letter words' do
+  it 'will not allow the user to enter a word less than 5 letters' do
+    game = Game.new('HELLO')
+
+    result = game.user_guess('BAZ')
+    expected_string = "Please enter a word with exactly 5 letters"
+
+    expect(result).to eq(expected_string)
+  end
+
+  it 'will not allow the user to enter a word more than 5 letters' do
   end
 end
 
