@@ -93,6 +93,14 @@ end
 
 describe 'checking for incorrect guess' do
   it 'checks if the guess is incorrect' do
+    game = Game.new
+    game.word = 'FOOBA'
+
+    game.user_guess('HELLO')
+    result = game.check_user_guess
+    expected_string = 'Incorrect guess! try again....'
+
+    expect(result).to eq(expected_string)
   end
 
   it 'updates the number of attemps' do

@@ -15,7 +15,9 @@ class Game
   def check_user_guess
     last_guess = @user_guesses.last
     return 'Please enter a word with exactly 5 letters' if last_guess.chars.count != 5
-    return @status = 'GAME WON' && 'Correct guess! You Win!' if last_guess == @word
+    return 'Incorrect guess! try again....' if last_guess != @word
+    @status = 'GAME WON' 
+    'Correct guess! You Win!'
   end
 
   def create_word
