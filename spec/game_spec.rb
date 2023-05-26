@@ -113,6 +113,18 @@ describe 'checking for incorrect guess' do
 
     expect(result).to eq(1)
   end
+
+  it 'updates more number of attemps' do
+    game = Game.new
+    game.word = 'FOOBA'
+
+    game.user_guess('HELLO')
+    game.user_guess('SHELL')
+    game.check_user_guess
+    result = game.attempts
+
+    expect(result).to eq(2)
+  end
 end
 
 describe 'check letter position' do
