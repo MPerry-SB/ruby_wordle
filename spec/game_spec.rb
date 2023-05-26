@@ -110,8 +110,7 @@ describe 'checking for incorrect guess' do
     game.user_guess('HELLO')
     game.check_user_guess
     result = game.attempts
-    expected_string = 'Incorrect guess! try again....'
-    
+
     expect(result).to eq(1)
   end
 end
