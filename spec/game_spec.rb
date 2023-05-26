@@ -48,8 +48,7 @@ describe 'guessing a word' do
   it 'will not allow the user to enter a word less than 5 letters' do
     game = Game.new
 
-    game.user_guess('BAZ')
-    result = game.check_user_guess
+    result = game.user_guess('BAZ')
     expected_string = 'Please enter a word with exactly 5 letters'
 
     expect(result).to eq(expected_string)
@@ -58,8 +57,7 @@ describe 'guessing a word' do
   it 'will not allow the user to enter a word more than 5 letters' do
     game = Game.new
 
-    game.user_guess('FOOBARBAZ')
-    result = game.check_user_guess
+    result = game.user_guess('FOOBARBAZ')
     expected_string = 'Please enter a word with exactly 5 letters'
 
     expect(result).to eq(expected_string)
@@ -71,8 +69,7 @@ describe 'checking for a correct guess' do
     game = Game.new
     game.word = 'HELLO'
 
-    game.user_guess('HELLO')
-    result = game.check_user_guess
+    result = game.user_guess('HELLO')
     expected_string = 'Correct guess! You Win!'
 
     expect(result).to eq(expected_string)
@@ -96,8 +93,7 @@ describe 'checking for incorrect guess' do
     game = Game.new
     game.word = 'FOOBA'
 
-    game.user_guess('HELLO')
-    result = game.check_user_guess
+    result = game.user_guess('HELLO')
     expected_string = 'Incorrect guess! try again....'
 
     expect(result).to eq(expected_string)
