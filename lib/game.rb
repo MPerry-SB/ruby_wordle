@@ -10,16 +10,18 @@ class Game
 
   def user_guess(string)
     return 'Please enter a word with exactly 5 letters' if string.chars.count != 5
+
     @attempts += 1
     @user_guesses << string
     check_user_guess(string)
   end
 
-  private 
+  private
 
   def check_user_guess(string)
     return 'Incorrect guess! try again....' if string != @word
-    @status = 'GAME WON' 
+
+    @status = 'GAME WON'
     'Correct guess! You Win!'
   end
 
