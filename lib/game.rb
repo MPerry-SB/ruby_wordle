@@ -11,6 +11,7 @@ class Game
   def user_guess(string)
     @attempts += 1
     @user_guesses << string
+    check_user_guess
   end
 
   def check_user_guess

@@ -108,7 +108,6 @@ describe 'checking for incorrect guess' do
     game.word = 'FOOBA'
 
     game.user_guess('HELLO')
-    game.check_user_guess
     result = game.attempts
 
     expect(result).to eq(1)
@@ -120,7 +119,6 @@ describe 'checking for incorrect guess' do
 
     game.user_guess('HELLO')
     game.user_guess('SHELL')
-    game.check_user_guess
     result = game.attempts
 
     expect(result).to eq(2)
