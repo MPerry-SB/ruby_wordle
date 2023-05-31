@@ -27,7 +27,7 @@ class Game
   end
 
   def check_user_guess
-    update_attempts
+    @attempts += 1
     user_guess = @user_guesses.last
 
     if user_guess == @word
@@ -37,10 +37,6 @@ class Game
     return 'Incorrect guess! try again....' if check_letter_positions.zero?
 
     @correct_letters
-  end
-
-  def update_attempts
-    @attempts += 1
   end
 
   def check_letter_positions
