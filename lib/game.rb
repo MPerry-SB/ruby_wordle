@@ -33,8 +33,9 @@ class Game
       @status = 'GAME WON'
       return 'Correct guess! You Win!'
     end
-    return 'Incorrect guess! try again....' if check_letter_positions == 0
-    @corrent_letters
+    return 'Incorrect guess! try again....' if check_letter_positions.zero?
+
+    @correct_letters
   end
 
   def update_attempts
@@ -46,15 +47,15 @@ class Game
     guess_array = @user_guesses.last.chars
     result = []
     correct_letter_positions = 0
-    @corrent_letters= ""
+    @correct_letters = ''
 
     guess_array.each_with_index do |element, i|
       if guess_array[i] == word_array[i]
-        result = element + "/"
-        @corrent_letters << result
-        correct_letter_positions =+ 1
+        result = "#{element}/"
+        @correct_letters << result
+        correct_letter_positions = + 1
       else
-        @corrent_letters << "_/"
+        @correct_letters << '_/'
       end
     end
     correct_letter_positions
