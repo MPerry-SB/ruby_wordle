@@ -50,8 +50,7 @@ class Game
 
     guess_array.each_with_index do |element, i|
       if guess_array[i] == word_array[i]
-        result = "#{element}/"
-        @correct_letters << result
+        @correct_letters << "#{element}/"
         correct_letter_positions = + 1
       else
         @correct_letters << '_/'
