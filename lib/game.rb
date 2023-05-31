@@ -9,9 +9,10 @@ class Game
   attr_accessor :attempts, :word, :user_guesses, :status
 
   def user_guess(string)
-    return 'Please enter a word with exactly 5 letters' if string.chars.count != 5
+    guess = string.strip
+    return 'Please enter a word with exactly 5 letters' if guess.chars.count != 5
 
-    add_user_guess(string)
+    add_user_guess(guess)
     check_user_guess
   end
 
