@@ -21,10 +21,6 @@ class Game
     %w[HELLO SHELL FOOBA].sample
   end
 
-  def update_attempts
-    @attempts += 1
-  end
-
   def add_user_guess(string)
     @user_guesses << string
   end
@@ -39,6 +35,10 @@ class Game
     end
     return 'Incorrect guess! try again....' if check_letter_positions == 0
     @corrent_letters
+  end
+
+  def update_attempts
+    @attempts += 1
   end
 
   def check_letter_positions
