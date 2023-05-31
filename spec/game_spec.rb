@@ -131,11 +131,6 @@ describe Game do
     end
   end
 
-  describe 'check letter existence' do
-    it 'identifies if a letter is within a guess' do
-    end
-  end
-
   describe 'winning the game' do
     it 'can identify when a player has won the game' do
     end
