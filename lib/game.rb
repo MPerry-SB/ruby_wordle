@@ -4,6 +4,7 @@ class Game
     @word = create_word
     @user_guesses = []
     @status = 'IN PROGRESS'
+    @letter_position
   end
 
   attr_accessor :attempts, :word, :user_guesses, :status
@@ -37,6 +38,26 @@ class Game
       @status = 'GAME WON'
       return 'Correct guess! You Win!'
     end
-    'Incorrect guess! try again....'
+    return 'Incorrect guess! try again....' if check_letter_positions(user_guess) == 0
+    @corrent_letters
+  end
+
+  def check_letter_positions(string)
+    word_array = @word.chars
+    guess_array = string.chars
+    result = []
+    correct_letter_positions = 0
+    @corrent_letters= ""
+
+    guess_array.each_with_index do |element, i|
+      if guess_array[i] == word_array[i]
+        result = element + "/"
+        @corrent_letters << result
+        correct_letter_positions =+ 1
+      else
+        @corrent_letters << "_/"
+      end
+    end
+    correct_letter_positions
   end
 end

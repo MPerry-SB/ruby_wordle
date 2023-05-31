@@ -122,6 +122,12 @@ describe Game do
 
   describe 'check letter position' do
     it 'identifies the correctly positioned letters of a guess' do
+      game = Game.new
+      game.word = 'FOOBA'
+
+      result = game.user_guess('BOOTS')
+
+      expect(result).to eq('_/O/O/_/_/')
     end
   end
 
