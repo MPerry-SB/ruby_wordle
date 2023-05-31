@@ -37,13 +37,13 @@ class Game
       @status = 'GAME WON'
       return 'Correct guess! You Win!'
     end
-    return 'Incorrect guess! try again....' if check_letter_positions(user_guess) == 0
+    return 'Incorrect guess! try again....' if check_letter_positions == 0
     @corrent_letters
   end
 
-  def check_letter_positions(string)
+  def check_letter_positions
     word_array = @word.chars
-    guess_array = string.chars
+    guess_array = @user_guesses.last.chars
     result = []
     correct_letter_positions = 0
     @corrent_letters= ""
