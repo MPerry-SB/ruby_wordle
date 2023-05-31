@@ -20,10 +20,12 @@ class Game
 
   def check_user_guess(string)
     user_guess = string.strip
-    return 'Incorrect guess! try again....' if user_guess != @word
 
-    @status = 'GAME WON'
-    'Correct guess! You Win!'
+    if user_guess == @word
+      @status = 'GAME WON'
+      return 'Correct guess! You Win!'
+    end
+    'Incorrect guess! try again....'
   end
 
   def create_word
