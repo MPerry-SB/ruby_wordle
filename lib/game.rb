@@ -4,7 +4,6 @@ class Game
     @word = create_word
     @user_guesses = []
     @status = 'IN PROGRESS'
-    @letter_position
   end
 
   attr_accessor :attempts, :word, :user_guesses, :status
