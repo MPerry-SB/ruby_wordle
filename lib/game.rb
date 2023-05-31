@@ -45,7 +45,6 @@ class Game
   def check_letter_positions
     word_array = @word.chars
     guess_array = @user_guesses.last.chars
-    result = []
     correct_letter_positions = 0
     @correct_letters = ''
 
