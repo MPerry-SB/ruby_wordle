@@ -11,9 +11,8 @@ class Game
   def user_guess(string)
     return 'Please enter a word with exactly 5 letters' if string.chars.count != 5
 
-    update_attempts
     add_user_guess(string)
-    check_user_guess(string)
+    check_user_guess
   end
 
   private
@@ -30,8 +29,9 @@ class Game
     @user_guesses << string
   end
 
-  def check_user_guess(string)
-    user_guess = string.strip
+  def check_user_guess
+    update_attempts
+    user_guess = @user_guesses.last
 
     if user_guess == @word
       @status = 'GAME WON'
