@@ -19,7 +19,8 @@ class Game
   private
 
   def check_user_guess(string)
-    return 'Incorrect guess! try again....' if string != @word
+    user_guess = string.strip
+    return 'Incorrect guess! try again....' if user_guess != @word
 
     @status = 'GAME WON'
     'Correct guess! You Win!'
