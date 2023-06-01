@@ -161,14 +161,5 @@ describe Game do
 
       expect(result).to eq(expected_string)
     end
-    it 'can identify when a player has lost the game' do
-    end
-  end
-
-  describe 'game reset' do
-    it 'resets the game after winning' do
-    end
-    it 'resets the game after losing' do
-    end
   end
 end
