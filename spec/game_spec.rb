@@ -145,9 +145,23 @@ describe Game do
   end
 
   describe 'losing the game' do
-    it 'can identify when a player has lost the game' do
-    end
     it 'will not allow the user to have more than 6 attempts' do
+      game = Game.new
+      game.word = 'FOOBA'
+
+      game.user_guess('HELLO')
+      game.user_guess('TELLO')
+      game.user_guess('BELLO')
+      game.user_guess('NELLO')
+      game.user_guess('CELLO')
+      game.user_guess('SELLO')
+      game.user_guess('YELLO')
+      result = game.status
+      expected_string = 'GAME LOST'
+
+      expect(result).to eq(expected_string)
+    end
+    it 'can identify when a player has lost the game' do
     end
   end
 

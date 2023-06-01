@@ -27,13 +27,13 @@ class Game
   end
 
   def check_user_guess
-    @attempts += 1
     user_guess = @user_guesses.last
 
     if user_guess == @word
       @status = 'GAME WON'
       return 'Correct guess! You Win!'
     end
+    check_user_attempts
     return 'Incorrect guess! try again....' if check_letter_positions.zero?
 
     @correct_letters
@@ -54,5 +54,10 @@ class Game
       end
     end
     correct_letter_positions
+  end
+
+  def check_user_attempts
+    @attempts += 1
+    @status = 'GAME LOST' if @attempts >= 6
   end
 end
