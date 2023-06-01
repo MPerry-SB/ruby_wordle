@@ -133,6 +133,14 @@ describe Game do
 
   describe 'winning the game' do
     it 'can identify when a player has won the game' do
+      game = Game.new
+      game.word = 'FOOBA'
+
+      game.user_guess('FOOBA')
+      result = game.status
+      expected_string = 'GAME WON'
+
+      expect(result).to eq(expected_string)
     end
   end
 
